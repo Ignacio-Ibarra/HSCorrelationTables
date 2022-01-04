@@ -1,4 +1,4 @@
-# Tablas de Conversión 	
+# Tablas de Conversión del Sistema Harmonizado de la Organización Mundial de Aduanas 	
 
 El Sistema Armonizado (HS, *Harmmonized Systems* en inglés) es un sistema internacional de codificación a seis dígitos de bienes intercambiados en el comercio mundial, creado por la 
 [*World Custom Organization*](http://www.wcoomd.org/en.aspx) (WCO) en 1988 y actualizado regularmente desde entonces. 
@@ -8,8 +8,7 @@ A través de los años nuevos productos aparecen y viejos productos desaparecen 
 Por ejemplo, si se requiere conocer las exportaciones de la posición 0106.41 ("abejas") sólo se podría obtener una serie temporal a partir del 01.01.2012, debido a que dicha posición se creó a partir de la versión **HS 2012**. 
 
 
-<img src="./abejas.svg" />
-<div class='epigraph'>
+<img src="https://github.com/Ignacio-Ibarra/HSConversionTables/blob/main/img/abejas.svg" />
 
 Fuente: [UN HSTracker](https://hstracker.wto.org/#).
 
@@ -17,9 +16,9 @@ La obtención de una serie más larga sólo se podría conseguir sacrificando pr
 
 Inclusive, si fuera necesaria una serie de tiempo más larga debería requerirse una cantidad mucho mayor de posiciones para poder tener una serie más homogénea, tal como se observa en la siguiente imagen. 
 
-<img src="./010600.svg" />
-<p class="epigraph">Fuente: [UN HSTracker](https://hstracker.wto.org/#)<br />
+<img src="https://github.com/Ignacio-Ibarra/HSConversionTables/blob/main/img/010600.svg" />
 
-.
+Fuente: [UN HSTracker](https://hstracker.wto.org/#)
+
 
 El objetivo del presente trabajo es diseñar una herramienta que permita saber de antemano cuál es el la ventana temporal disponible de cierto producto o qué sacrificio es necesario para ampliar el espacio temporal. 
