@@ -8,7 +8,7 @@ A través de los años nuevos productos aparecen y viejos productos desaparecen 
 Por ejemplo, si se requiere conocer las exportaciones de la posición 0106.41 ("abejas") sólo se podría obtener una serie temporal a partir del 01.01.2012, debido a que dicha posición se creó a partir de la versión **HS 2012**. 
 
 
-<img src="https://github.com/Ignacio-Ibarra/HSConversionTables/blob/main/img/010641.html" />
+<img src="https://github.com/Ignacio-Ibarra/HSConversionTables/blob/main/img/abejas.svg" />
 
 Fuente: [UN HSTracker](https://hstracker.wto.org/#).
 
