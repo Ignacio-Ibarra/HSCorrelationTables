@@ -22,4 +22,4 @@ Fuente: [UN HSTracker](https://hstracker.wto.org/#)
 
 Tal como se observa en la imagen para poder obtener una serie desde 1992 es necesario requerir una gran cantidad de posiciones y realizar una agregación, lo que implica perder precisión en la definición. En este caso el producto quedaría definido como "animales vivos (excl. caballos, aznos, mulas, burdéganos, animales bovinos, cerdos, ovejas, cabras, aves de corral, peces, crustáceos, moluscos y otros invertebrados acuáticos y cultivos de microorganismos)". 
 
-El objetivo del presente trabajo es diseñar una herramienta que permita saber de antemano cuál es el la ventana temporal disponible de cierto producto o cuál es la pérdida de precisión en la definición de un producto para ampliar el espacio temporal. 
+El objetivo del presente trabajo es diseñar una herramienta que permita saber de antemano cuál es el la ventana temporal disponible de cierto producto o cuál es la pérdida de precisión en la definición de un producto que permita ampliar el espacio temporal. 
