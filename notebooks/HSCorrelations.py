@@ -249,3 +249,15 @@ class HSCorrelations:
         else:
             print("Please define a correct position")
     
+    def query(self, position=None, start_year=None, end_year=None):
+        if start_year==None: 
+            start_year = 1992
+        if end_year==None: 
+            end_year = datetime.now().year
+        if start_year < 1992 or end_year<start_year or end_year>datetime.now().year: 
+            return print("Uncorrect years")
+        if start_year>=2017:
+            return print("Both years belong to the latest version")
+        self.trade_off(position=position, start_year=start_year, end_year=end_year)
+        print("*"*75)
+        print(f"The positions you have to use to maintain homogeneous series between {start_year} and {end_year} is: \n\n", self.find_homogeneous_serie(position=position, start_year=start_year, end_year=end_year)) 
