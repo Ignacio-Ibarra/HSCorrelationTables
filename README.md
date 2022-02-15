@@ -1,13 +1,12 @@
 # Tablas de Conversión del Sistema Harmonizado de la Organización Mundial de Aduanas 	
 
-<div style="text-align: justify"> 
+
 El Sistema Armonizado (HS, *Harmmonized Systems* en inglés) es un sistema internacional de codificación a seis dígitos de bienes intercambiados en el comercio mundial, creado por la 
 <a href="http://www.wcoomd.org/en.aspx">World Custom Organization</a> (WCO) en 1988 y actualizado regularmente desde entonces. 
 
 A través de los años nuevos productos aparecen y viejos productos desaparecen del comercio mundial. Asimismo algunos productos se convierten en varios productos o se diferencian en calidad o cambian sus procesos técnicos. Dichos cambios se registran, mediante las versiones del HS. La versión actual es la de 2017, aunque pronto se pondrá en funcionamiento la versión 2022. 
 
 Por ejemplo, si se requiere conocer las exportaciones de la posición 0106.41 ("abejas") sólo se podría obtener una serie temporal a partir del 01.01.2012, debido a que dicha posición se creó a partir de la versión **HS 2012**. 
-</div>
 
 <img src="https://github.com/Ignacio-Ibarra/HSConversionTables/blob/main/img/abejas.svg" />
 
