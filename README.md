@@ -1,12 +1,13 @@
 # Tablas de Conversión del Sistema Harmonizado de la Organización Mundial de Aduanas 	
 
+<div style="text-align: justify"> 
 El Sistema Armonizado (HS, *Harmmonized Systems* en inglés) es un sistema internacional de codificación a seis dígitos de bienes intercambiados en el comercio mundial, creado por la 
 [*World Custom Organization*](http://www.wcoomd.org/en.aspx) (WCO) en 1988 y actualizado regularmente desde entonces. 
 
 A través de los años nuevos productos aparecen y viejos productos desaparecen del comercio mundial. Asimismo algunos productos se convierten en varios productos o se diferencian en calidad o cambian sus procesos técnicos. Dichos cambios se registran, mediante las versiones del HS. La versión actual es la de 2017, aunque pronto se pondrá en funcionamiento la versión 2022. 
 
 Por ejemplo, si se requiere conocer las exportaciones de la posición 0106.41 ("abejas") sólo se podría obtener una serie temporal a partir del 01.01.2012, debido a que dicha posición se creó a partir de la versión **HS 2012**. 
-
+</div>
 
 <img src="https://github.com/Ignacio-Ibarra/HSConversionTables/blob/main/img/abejas.svg" />
 
@@ -22,4 +23,4 @@ Fuente: [UN HSTracker](https://hstracker.wto.org/#)
 
 Tal como se observa en la imagen para poder obtener una serie desde 1992 es necesario requerir una gran cantidad de posiciones y realizar una agregación, lo que implica perder precisión en la definición. En este caso el producto quedaría definido como "animales vivos (excl. caballos, aznos, mulas, burdéganos, animales bovinos, cerdos, ovejas, cabras, aves de corral, peces, crustáceos, moluscos y otros invertebrados acuáticos y cultivos de microorganismos)". 
 
-El objetivo del presente trabajo es diseñar una herramienta que permita saber de antemano cuál es el la ventana temporal disponible de cierto producto o cuál es la pérdida de precisión en la definición de un producto que permita ampliar el espacio temporal. 
+El objetivo del presente trabajo es diseñar una herramienta que permita saber de antemano cuál es la ventana temporal disponible de cierto producto o cuál es la pérdida de precisión en la definición de un producto que permita ampliar el espacio temporal. 
