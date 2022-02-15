@@ -243,7 +243,6 @@ class HSCorrelations:
                 json = requests.get(url).json()
                 df = pd.DataFrame(json['results'])
                 description = df.loc[df.id==position,'text'].values[0]
-                print(description)
                 return description
             else:
                 print("Please specify HS version")
