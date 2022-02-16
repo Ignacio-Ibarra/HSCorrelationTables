@@ -8,6 +8,13 @@ import numpy as np
 import networkx as nx
 from operator import and_
 import requests
+import plotly.graph_objects as go
+import chart_studio.plotly as py
+import plotly
+import git
+import platform
+
+
 
 
 class HSCorrelations: 
@@ -249,7 +256,7 @@ class HSCorrelations:
         else:
             print("Please define a correct position")
     
-    def query(self, position=None, start_year=None, end_year=None):
+    def query(self, position=None, start_year=None, end_year=None, sankey=False):
         if start_year==None: 
             start_year = 1992
         if end_year==None: 
@@ -261,3 +268,14 @@ class HSCorrelations:
         self.trade_off(position=position, start_year=start_year, end_year=end_year)
         print("*"*75)
         print(f"The positions you have to use to maintain homogeneous series between {start_year} and {end_year} is: \n\n", self.find_homogeneous_serie(position=position, start_year=start_year, end_year=end_year)) 
+        if sankey: 
+            repo = git.Repo('.', search_parent_directories=True)
+            repo = repo.working_tree_dir
+            if platform.system()=='Windows':
+                img_folder = repo+"\\img\\"
+            else: 
+                img_folder = repo+"/img/"
+            Path(img_folder).mkdir(parents=True, exist_ok=True)
+            fig = self.genSankey(position, start_year = start_year, end_year = end_year, output_title=f"Sankey Diagram - {position}")
+            if fig is not None:
+                return plotly.offline.plot(fig, validate=False, filename = f"{img_folder}{position}.html")
