@@ -189,6 +189,77 @@ class HSCorrelations:
         else: 
            print("Please define a correct position") 
     
+
+    def genSankey2(self, position=None, start_year=None, end_year=None, output_title='Sankey Diagram'):
+        if self.check_position(position): 
+            related = list(set([x[5:] for x in self.find_homogeneous_serie(position, start_year, end_year)]))
+            cat_cols = self.year_to_HS(start_year, end_year)
+            dfa = self.filter_df(related, start_year, end_year)
+            dfa['count'] = 1
+            df = dfa.copy()
+            for col in cat_cols: 
+                df[col] = df[col].apply(lambda x: col+"-"+str(int(x)).zfill(6))
+            colorPalette = ['#4B8BBE','#306998','#FFE873','#FFD43B','#646464',"#002060"]
+            labelList = []
+            colorNumList = []
+            for catCol in cat_cols:
+                labelListTemp =  list(set(df[catCol].values))
+                colorNumList.append(len(labelListTemp))
+                labelList = labelList + labelListTemp
+
+            # remove duplicates from labelList
+            labelList = list(dict.fromkeys(labelList))
+
+            # define colors based on number of levels
+            colorList = []
+            for idx, colorNum in enumerate(colorNumList):
+                colorList = colorList + [colorPalette[idx]]*colorNum
+
+            # transform df into a source-target pair
+            for i in range(len(cat_cols)-1):
+                if i==0:
+                    sourceTargetDf = df[[cat_cols[i],cat_cols[i+1],'count']]
+                    sourceTargetDf.columns = ['source','target','count']
+                else:
+                    tempDf = df[[cat_cols[i],cat_cols[i+1],'count']]
+                    tempDf.columns = ['source','target','count']
+                    sourceTargetDf = pd.concat([sourceTargetDf,tempDf])
+
+            sourceTargetDf = sourceTargetDf.groupby(['source','target']).agg({'count':'sum'}).reset_index()
+
+            # add index for source-target pair
+            sourceTargetDf['sourceID'] = sourceTargetDf['source'].apply(lambda x: labelList.index(x))
+            sourceTargetDf['targetID'] = sourceTargetDf['target'].apply(lambda x: labelList.index(x))
+
+            import plotly.graph_objects as go
+
+            fig = go.Figure(data = [go.Sankey(
+                node = dict(
+                  pad = 15,
+                  thickness = 20,
+                  line = dict(
+                    color = "black",
+                    width = 0.5),
+                  label = labelList,
+                  color = colorList
+                ),
+                link = dict(
+                  source = sourceTargetDf['sourceID'],
+                  target = sourceTargetDf['targetID'],
+                  value = sourceTargetDf['count']
+                )
+
+                )]
+            )
+
+            fig.update_layout(title_text = output_title, font_size = 10)
+            
+            return fig
+        else: 
+           print("Please define a correct position")
+
+
+
     def recursive_trade_off(self, df, position, k): 
     
         if k>=0:
